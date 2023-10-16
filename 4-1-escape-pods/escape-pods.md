@@ -47,8 +47,8 @@ Basically, the algorithm first initialises all zeros (or infinites) for all edge
 1. Traverse graph to see whether there's a path from $s$ to $t$. Such paths are commonly referred to as "augmenting paths".
 2. If no augmenting path is found, the algorithm terminates, therefore the maximum flow is 0.
 3. Otherwise, determine the maximum amount of flow that can be sent along that path. 
-4. Compute each edges' residuals by subtracting the capacity $C(e)$ by the incoming flow $f(e)$ (i.e., how many capacities remain after being fed $f(e)$) -- for instance, if $C(u,v)$ is $5$ and $f(u,v)$ is $3$, the residual $C(v,u)$ will be $2$.
-5. Make a copy of the original graph (called residual graph) where for forward edges (edges in the original graph; $C(u,v)$), decrease the residual capacity by the flow added, and for reverse edges (edges added to represent the reverse flow, $C(v,u)$), increase the residual capacity by the same amount. 
+4. Compute each edges' residuals by subtracting the capacity $C(e)$ by the incoming flow $f(e)$ (i.e., how many capacities remain after being fed $f(e)$ ) -- for instance, if $C(u,v)$ is $5$ and $f(u,v)$ is $3$, the residual $C(v,u)$ will be $2$.
+5. Make a copy of the original graph (called residual graph) where for forward edges (edges in the original graph; $C(u,v)$ ), decrease the residual capacity by the flow added, and for reverse edges (edges added to represent the reverse flow, $C(v,u)$ ), increase the residual capacity by the same amount. 
 6. Recompute potential augmenting paths, updating the residual graph necessarily.
 7. When no more augmenting paths can be found, the algorithm terminates, and the flow achieved at this point is the maximum flow in the network.
 
